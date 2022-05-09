@@ -50,22 +50,17 @@ function chalet_caviar_init()
         'label'               => 'location',
         'labels'              => $labels,
         'supports'            => array('title', 'editor', 'excerpt', 'author', 'thumbnail', 'comments', 'revisions', 'custom-fields'),
-        'hierarchical'        => false,
         'public'              => true,
         'show_ui'             => true,
         'show_in_menu'        => true,
         'show_in_nav_menus'   => true,
         'show_in_admin_bar'   => true,
-        'can_export'          => true,
         'has_archive'         => true,
-        'exclude_from_search' => false,
-        'publicly_queryable'  => true,
-        'capability_type'     => 'page',
         'show_in_rest'        => true,
         'menu_position'  => 4,
         'menu_icon' => 'dashicons-admin-multisite',
         'taxonomies'          => array('category', 'post_tag'),
-        'rewrite' => array('slug' => 'locations', 'with_front' => false),
+        'rewrite' => array('slug' => 'locations'),
     );
     register_post_type('location', $args);
 
@@ -109,6 +104,7 @@ function chalet_caviar_init()
 function chalet_caviar_pagination()
 {
     $pages = paginate_links(['type' => 'array']);
+
     if ($pages === null) {
         return;
     }
@@ -130,7 +126,7 @@ function chalet_caviar_pagination()
 }
 
 /** action */
-add_action('init', 'App\chalet_caviar_init', 0);
+add_action('init', 'App\chalet_caviar_init');
 add_action('after_setup_theme', 'App\chalet_caviar_supports');
 add_action('wp_enqueue_scripts', 'App\chalet_caviar_register_assets');
 
@@ -157,7 +153,3 @@ function chalet_caviar_menu_link_class(array $attrs): array
 add_filter('document_title_separator', 'App\chalet_caviar_separator');
 add_filter('nav_menu_css_class', 'App\chalet_caviar_menu_class');
 add_filter('nav_menu_link_attributes', 'App\chalet_caviar_menu_link_class');
-
-
-/** requêtes */
-

@@ -6,7 +6,7 @@
 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $custom_args = array(
     'post_type' => 'vente',
-    'posts_per_page' => 3,
+    'posts_per_page' => 6,
     'orderby' => 'rand',
     'paged' => $paged
 ); ?>

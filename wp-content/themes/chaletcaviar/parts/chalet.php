@@ -1,9 +1,9 @@
-<div class="card" style="width: 22rem; height: 520px">
+<div class="card" style="width: 22rem; height: 480px">
     <a href="<?php the_permalink() ?>">
         <?php the_post_thumbnail('card-header', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height:auto']) ?></a>
 
     <div class="card-body">
-        <h4 class="card-title"><?php the_title() ?></h4>
+        <h5 class="card-title"><?php the_title() ?></h5>
         <h6 class="card-subtitle mb-2 text-muted"><?php the_category() ?></h6>
         <p class="card-text"><?php the_excerpt() ?></p>
         <?php $postTags = get_the_tags(); ?>
@@ -15,6 +15,6 @@
             </div>
         <?php } ?>
         <hr class="mb-2" />
-        <a href="<?php the_permalink() ?>" class="btn btn-primary float-left">Voir plus</a></p>
+        <a href="<?php the_permalink() ?>" class="btn btn-outline-info btn-sm float-center">En savoir plus</a></p>
     </div>
 </div>
