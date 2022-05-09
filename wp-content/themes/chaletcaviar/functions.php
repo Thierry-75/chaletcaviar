@@ -6,6 +6,7 @@ use AgenceMenuPage;
 use WP_Query;
 
 require_once('options/agence.php');
+require_once('entity/PostEntity.php');
 
 function chalet_caviar_register_assets()
 {
@@ -106,8 +107,8 @@ function chalet_caviar_init()
 
 function chalet_caviar_pagination()
 {
-    $pages = paginate_links(['type' => 'array']);
-
+    $pages = paginate_links(['type' => 'array']);    
+    var_dump(get_page_link());
     if ($pages === null) {
         return;
     }
@@ -157,9 +158,6 @@ function chalet_caviar_menu_link_class(array $attrs): array
 add_filter('document_title_separator', 'App\chalet_caviar_separator');
 add_filter('nav_menu_css_class', 'App\chalet_caviar_menu_class');
 add_filter('nav_menu_link_attributes', 'App\chalet_caviar_menu_link_class');
-
-
-
 
 add_filter('manage_posts_columns', function($columns){
     return [

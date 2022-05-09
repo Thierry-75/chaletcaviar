@@ -2,15 +2,26 @@
 
 <?php get_header() ?>
 
+<?php
+global $post;
+$x = new PostEntity($post);
+?>
+<pre>
+<?php var_dump($x); ?>
+</pre>
+
+
 <h1>Nos locations de chalet</h1>
 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
     'post_type' => 'location',
     'posts_per_page' => 6,
     'orderby' => 'rand',
-    'paged' => $paged
+    'paged' => $paged,
+
 ); ?>
 <?php $query = new WP_Query($args); ?>
+
 <?php if ($query->have_posts()) : ?>
     <div class="row">
         <?php while ($query->have_posts()) : $query->the_post(); ?>

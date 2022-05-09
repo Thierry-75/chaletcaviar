@@ -3,8 +3,6 @@
 Template Name: Contact Form
 */
 ?>
-
-
 <?php
 
 if (isset($_POST['submitted'])) {
@@ -99,7 +97,7 @@ if (isset($_POST['submitted'])) {
 
 			<form action="<?php the_permalink(); ?>" id="contactForm" method="post">
 				<fieldset>
-					<legend>Inscription</legend>
+					<legend>Laissez nous votre message</legend>
 					<div class="col-md-8">
 						<label for="contactNom">Nom</label>
 						<input type="text" class="form-control" name="contactNom" id="contactNom" value="<?php if (isset($_POST['contactNom'])) echo $_POST['contactNom']; ?>" class="requiredField" />
