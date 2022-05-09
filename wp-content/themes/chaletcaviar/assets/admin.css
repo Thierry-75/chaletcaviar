@@ -1,0 +1,22 @@
+
+.manage-column column-title column-primary sortable {
+    width: 30px;
+}
+.manage-column column-date sortable asc{
+    width: 30px;
+}
+.column-sponso{
+    vertical-align: middle!important;
+    text-align: center;
+}
+.column-sponso .bullet{
+    display: inline-block;
+    width: 10px;
+    height: 10px;
+    border-radius: 10px ;
+    background: lightgreen;
+}
+
+.column-sponso .bullet-no{
+    background-color: lightcoral
+}

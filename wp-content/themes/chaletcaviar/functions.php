@@ -2,7 +2,10 @@
 
 namespace App;
 
+use AgenceMenuPage;
 use WP_Query;
+
+require_once('options/agence.php');
 
 function chalet_caviar_register_assets()
 {
@@ -58,7 +61,7 @@ function chalet_caviar_init()
         'has_archive'         => true,
         'show_in_rest'        => true,
         'menu_position'  => 4,
-        'menu_icon' => 'dashicons-admin-multisite',
+        'menu_icon' => 'dashicons-building',
         'taxonomies'          => array('category', 'post_tag'),
         'rewrite' => array('slug' => 'locations'),
     );
@@ -94,7 +97,7 @@ function chalet_caviar_init()
             'capability_type'     => 'page',
             'show_in_rest'        => true,
             'menu_position'  => 5,
-            'menu_icon' => 'dashicons-admin-multisite',
+            'menu_icon' => 'dashicons-store',
             'taxonomies'          => array('category', 'post_tag'),
             'rewrite' => array('slug' => 'ventes', 'with_front' => false),
         );
@@ -130,6 +133,10 @@ add_action('init', 'App\chalet_caviar_init');
 add_action('after_setup_theme', 'App\chalet_caviar_supports');
 add_action('wp_enqueue_scripts', 'App\chalet_caviar_register_assets');
 
+add_action('admin_enqueue_scripts', function(){
+    wp_enqueue_style('admin_chaletcaviar', get_template_directory_uri() . '/assets/admin.css');
+});
+
 function chalet_caviar_separator($separator)
 {
     return '|';
@@ -146,10 +153,35 @@ function chalet_caviar_menu_link_class(array $attrs): array
     return $attrs;
 }
 
-
-
-
 /** filter */
 add_filter('document_title_separator', 'App\chalet_caviar_separator');
 add_filter('nav_menu_css_class', 'App\chalet_caviar_menu_class');
 add_filter('nav_menu_link_attributes', 'App\chalet_caviar_menu_link_class');
+
+
+
+
+add_filter('manage_posts_columns', function($columns){
+    return [
+        'cb' => $columns['cb'],
+        'title' => $columns['title'],
+        'thumbnail' => 'Miniature',
+        'date' => $columns['date']
+    ];
+});
+
+
+
+add_filter('manage_posts_custom_column', function($column,$postId){
+    if($column === 'thumbnail')
+    {
+        the_post_thumbnail('thumbnail', $postId);
+    }
+
+},10,2);
+
+
+
+
+/** gestion du backoffice horaires */
+AgenceMenuPage::register();

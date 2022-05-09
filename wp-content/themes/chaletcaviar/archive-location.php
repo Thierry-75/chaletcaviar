@@ -2,7 +2,7 @@
 
 <?php get_header() ?>
 
-
+<h1>Nos locations de chalet</h1>
 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
     'post_type' => 'location',
@@ -14,7 +14,7 @@ $args = array(
 <?php if ($query->have_posts()) : ?>
     <div class="row">
         <?php while ($query->have_posts()) : $query->the_post(); ?>
-            <div class="col sm-2 my-2">
+            <div class="col sm-4 my-4">
                 <?php get_template_part('parts/chalet') ?>
             </div>
         <?php endwhile ?>

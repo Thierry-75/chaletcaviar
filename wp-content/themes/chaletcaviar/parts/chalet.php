@@ -15,6 +15,6 @@
             </div>
         <?php } ?>
         <hr class="mb-2" />
-        <a href="<?php the_permalink() ?>" class="btn btn-outline-info btn-sm float-center">En savoir plus</a></p>
+        <a href="<?php the_permalink() ?>" class="btn btn-success btn-sm">En savoir plus</a></p>
     </div>
 </div>

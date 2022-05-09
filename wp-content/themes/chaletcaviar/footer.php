@@ -7,7 +7,16 @@
             'menu_class' => 'navbar-nav me-auto mb-2 mb-lg-0'
         ])  ?>
     </footer>
+    <div class="alert alert-warning text-center" role="alert">
+  HORAIRES DE L'AGENCE
 </div>
+    <div class="alert alert-dark" role="alert">
+    <?= get_option('agence_horaire') ?>
+</div>
+ 
+
+</div>
+
 
 <?php wp_footer() ?>
 </body>

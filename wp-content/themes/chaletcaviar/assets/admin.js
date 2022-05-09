@@ -1,0 +1,1 @@
+jQuery(".chaletcaviar _datepicker").flatpickr({});
