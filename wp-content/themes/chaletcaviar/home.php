@@ -8,7 +8,6 @@
 <hr class="mb-2" />
 
 <?php if (have_posts()) : ?>
-   
     <div class="row">
         <?php while (have_posts()) : the_post() ?>
             <div class="col sm-2 my-2">

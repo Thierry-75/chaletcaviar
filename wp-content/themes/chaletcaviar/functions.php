@@ -132,7 +132,7 @@ function chalet_caviar_init()
 function chalet_caviar_pagination()
 {
     $pages = paginate_links(['type' => 'array']);    
-//    var_dump(get_page_link());
+  // var_dump(get_page_link());
     if ($pages === null) {
         return;
     }

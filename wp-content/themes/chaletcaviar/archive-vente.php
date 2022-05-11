@@ -1,4 +1,6 @@
-<?php /** Template Name: Ventes */ ?>
+<?php /** Template Name: Ventes */ 
+      /** Template Post Type: page, post, vente */
+?>
 
 <?php get_header() ?>
 
@@ -11,13 +13,14 @@
 $args = array(
     'post_type' => 'vente',
     'posts_per_page' => 6,
-    'orderby' => 'rand',
+    'orderby' => 'date',
     'paged' => $paged,
 
 ); ?>
 <?php $query = new WP_Query($args); ?>
 
 <?php if ($query->have_posts()) : ?>
+ 
     <div class="row">
         <?php while ($query->have_posts()) : $query->the_post(); ?>
             <div class="col sm-4 my-4">

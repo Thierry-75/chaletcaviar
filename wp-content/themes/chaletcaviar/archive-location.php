@@ -1,7 +1,8 @@
-<?php /** Template Name: Locations */ ?>
+<?php /** Template Name: Ventes */ 
+      /** Template Post Type: page, post, location */
+?>
 
 <?php get_header() ?>
-
 <div class="entete">
 <h1 class="text-dark text-center">Chalets en location</h1>
 </div>
@@ -11,7 +12,7 @@
 $args = array(
     'post_type' => 'location',
     'posts_per_page' => 6,
-    'orderby' => 'rand',
+    'orderby' => 'date',
     'paged' => $paged,
 
 ); ?>
@@ -25,7 +26,7 @@ $args = array(
             </div>
         <?php endwhile ?>
     </div>
-    <?php App\chalet_caviar_pagination() ?>
+    <?php the_posts_pagination(); ?>
 <?php else : ?>
     <h1>Pas de chalets enregistrés</h1>
 <?php endif ?>

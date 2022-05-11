@@ -1,8 +1,4 @@
 <?php get_header() ?>
-
-
- 
-
 <div class="entete">
 <h1 class="text-dark text-center">CHALETS</h1>
 </div>

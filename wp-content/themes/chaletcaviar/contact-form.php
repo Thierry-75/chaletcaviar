@@ -97,13 +97,14 @@ if (isset($_POST['submitted'])) {
 
 			<form action="<?php the_permalink(); ?>" id="contactForm" method="post">
 				<fieldset>
-					<div class="entete">
+					<div class="entete col-md-12">
 					<legend class="text-dark text-center"><h1>&nbsp;Laissez nous votre message</h1></legend>
 					</div>
+					
+					<br />
+					<div class="col-md-12">
 					<br />
 					<hr class="mb-2" />
-					<br />
-					<div class="col-md-8">
 						<label class="text-info" for="contactNom">Nom</label>
 						<input type="text" class="form-control" name="contactNom" id="contactNom" value="<?php if (isset($_POST['contactNom'])) echo $_POST['contactNom']; ?>" class="requiredField" />
 						<?php if ($nomError != '') { ?>
@@ -113,7 +114,7 @@ if (isset($_POST['submitted'])) {
 						<?php } ?>
 					</div>
 					<br />
-					<div class="col-md-8">
+					<div class="col-md-12">
 						<label class="text-info" for="contactPrenom">Prénom</label>
 						<input type="text" class="form-control" name="contactPrenom" id="contactPrenom" value="<?php if (isset($_POST['contactPrenom'])) echo $_POST['contactPrenom']; ?>" class="requiredField" />
 						<?php if ($prenomError != '') { ?>
@@ -123,7 +124,7 @@ if (isset($_POST['submitted'])) {
 						<?php } ?>
 					</div>
 					<br />
-					<div class="col-md-8">
+					<div class="col-md-12">
 						<label class="text-info" for="email">Email</label>
 						<input type="text" class="form-control" name="email" id="email" value="<?php if (isset($_POST['email']))  echo $_POST['email']; ?>" class="requiredField email" />
 						<?php if ($emailError != '') { ?>
@@ -131,7 +132,7 @@ if (isset($_POST['submitted'])) {
 						<?php } ?>
 					</div>
 					<br />
-					<div class="col-md-8">
+					<div class="col-md-12">
 						<label class="text-info" for="comments">Message</label>
 						<textarea class="form-control" name="comments" id="commentsText" rows="10" cols="30" class="requiredField"></textarea>
 						<?php if (isset($_POST['comments'])) {
@@ -149,7 +150,7 @@ if (isset($_POST['submitted'])) {
 					<input type="hidden" name="submitted" id="submitted" value="true" />
 				</fieldset>
 				<div class="input-group">
-					<div class="col-md-3"></div>
+					<div class="col-md-5"></div>
 					<button type="submit" class=" col-md-2 btn btn-secondary">Envoyer</button>
 				</div>
 			</form>
