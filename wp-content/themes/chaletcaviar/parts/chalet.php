@@ -1,4 +1,4 @@
-<div class="card" style="width: 22rem; height: 480px">
+<div class="card mb-3" style="width: 21rem; height: 480px">
     <a href="<?php the_permalink() ?>">
         <?php the_post_thumbnail('card-header', ['class' => 'card-img-top', 'alt' => '', 'style' => 'height:auto']) ?></a>
 
@@ -10,7 +10,7 @@
         <?php if ($postTags) { ?>
             <div class="single-tags">
                 <?php foreach ($postTags as $tag) { ?>
-                    <span class="badge bg-warning text-white"><?php echo $tag->name ?></span>
+                   <span class="badge bg-warning text-white"><?php echo $tag->name ?></span>
                 <?php } ?>
             </div>
         <?php } ?>

@@ -1,11 +1,24 @@
 <?php
+
 /**
  * Template Name: Page avec bannière
  * Template Post Type: page, post, chalet
  */
 ?>
 <?php get_header() ?>
-<h1>Accueil avec bannière</h1>
-<h2>construction caroussel</h2>
- <p>Page à construire quand le modele page avec bannier est activée </p>
- <?php get_footer() ?>
+<div class="entete">
+<?php $genres = get_terms(['taxonomy' => 'genre', 'title_li' => '']); ?>
+<ul class="nav nav-pills">
+    <?php foreach ($genres as $genre) : ?>
+        <li class="nav-item">
+            <a href="<?= get_term_link($genre) ?>" class="nav-link <?php is_tax('genre', $genre->term_id) ? 'active' : '' ?>">
+                <h5><?= $genre->name ?>
+            </a></h5>
+        </li>
+    <?php endforeach; ?>
+</ul>
+</div>
+<hr class="mb-2" />
+
+
+<?php get_footer() ?>

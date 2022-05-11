@@ -1,0 +1,18 @@
+body{
+    background-color:RGB(238, 241, 243)!important;
+}
+
+.card{
+    box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47!important;
+}
+
+alert alert-dismissible alert-light{
+    border-radius: 15px 15px 15px 15px!important;
+    box-shadow: 0 0 5px #816f47!important;
+    background-color: aliceblue!important;
+}
+.entete{
+    box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47!important;
+}
+
+

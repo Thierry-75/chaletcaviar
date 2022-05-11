@@ -2,19 +2,25 @@
 
 <?php get_header() ?>
 
-<h1>Chalets en vente</h1>
+<div class="entete">
+<h1 class="text-dark text-center">Chalets en vente</h1>
+</div>
+<hr class="mb-2" />
+
 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
-$custom_args = array(
+$args = array(
     'post_type' => 'vente',
     'posts_per_page' => 6,
     'orderby' => 'rand',
-    'paged' => $paged
+    'paged' => $paged,
+
 ); ?>
-<?php $custom_query = new WP_Query($custom_args); ?>
-<?php if ($custom_query->have_posts()) : ?>
+<?php $query = new WP_Query($args); ?>
+
+<?php if ($query->have_posts()) : ?>
     <div class="row">
-        <?php while ($custom_query->have_posts()) : $custom_query->the_post(); ?>
-            <div class="col sm-2 my-2">
+        <?php while ($query->have_posts()) : $query->the_post(); ?>
+            <div class="col sm-4 my-4">
                 <?php get_template_part('parts/chalet') ?>
             </div>
         <?php endwhile ?>

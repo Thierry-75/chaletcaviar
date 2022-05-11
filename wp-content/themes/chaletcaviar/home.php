@@ -1,13 +1,18 @@
+<?php /** Template Name: actualités */ ?>
+
 <?php get_header() ?>
 
-<h1>Actualites </h1>
+<div class="entete">
+<h1 class="text-dark text-center">Actualités</h1>
+</div>
+<hr class="mb-2" />
 
 <?php if (have_posts()) : ?>
    
     <div class="row">
         <?php while (have_posts()) : the_post() ?>
             <div class="col sm-2 my-2">
-                <?php get_template_part('parts/post') ?>
+                <?php get_template_part('parts/chalet') ?>
             </div>
         <?php endwhile ?>
     </div>

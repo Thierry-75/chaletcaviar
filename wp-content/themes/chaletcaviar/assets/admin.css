@@ -1,9 +1,12 @@
 
-.manage-column column-title column-primary sortable {
-    width: 30px;
+#thumbnail {
+    width: 10%;
+  }
+#title{
+    width: 10%;
 }
-.manage-column column-date sortable asc{
-    width: 30px;
+#cb{
+    width: 5%;
 }
 .column-sponso{
     vertical-align: middle!important;

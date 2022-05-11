@@ -97,9 +97,14 @@ if (isset($_POST['submitted'])) {
 
 			<form action="<?php the_permalink(); ?>" id="contactForm" method="post">
 				<fieldset>
-					<legend>Laissez nous votre message</legend>
+					<div class="entete">
+					<legend class="text-dark text-center"><h1>&nbsp;Laissez nous votre message</h1></legend>
+					</div>
+					<br />
+					<hr class="mb-2" />
+					<br />
 					<div class="col-md-8">
-						<label for="contactNom">Nom</label>
+						<label class="text-info" for="contactNom">Nom</label>
 						<input type="text" class="form-control" name="contactNom" id="contactNom" value="<?php if (isset($_POST['contactNom'])) echo $_POST['contactNom']; ?>" class="requiredField" />
 						<?php if ($nomError != '') { ?>
 							<div>
@@ -109,7 +114,7 @@ if (isset($_POST['submitted'])) {
 					</div>
 					<br />
 					<div class="col-md-8">
-						<label for="contactPrenom">Prénom</label>
+						<label class="text-info" for="contactPrenom">Prénom</label>
 						<input type="text" class="form-control" name="contactPrenom" id="contactPrenom" value="<?php if (isset($_POST['contactPrenom'])) echo $_POST['contactPrenom']; ?>" class="requiredField" />
 						<?php if ($prenomError != '') { ?>
 							<div>
@@ -119,7 +124,7 @@ if (isset($_POST['submitted'])) {
 					</div>
 					<br />
 					<div class="col-md-8">
-						<label for="email">Email</label>
+						<label class="text-info" for="email">Email</label>
 						<input type="text" class="form-control" name="email" id="email" value="<?php if (isset($_POST['email']))  echo $_POST['email']; ?>" class="requiredField email" />
 						<?php if ($emailError != '') { ?>
 							<span class="error text-primary"><?= $emailError; ?></span>
@@ -127,7 +132,7 @@ if (isset($_POST['submitted'])) {
 					</div>
 					<br />
 					<div class="col-md-8">
-						<label for="comments">Message</label>
+						<label class="text-info" for="comments">Message</label>
 						<textarea class="form-control" name="comments" id="commentsText" rows="10" cols="30" class="requiredField"></textarea>
 						<?php if (isset($_POST['comments'])) {
 							if (function_exists('stripslashes')) {
@@ -145,7 +150,7 @@ if (isset($_POST['submitted'])) {
 				</fieldset>
 				<div class="input-group">
 					<div class="col-md-3"></div>
-					<button type="submit" class=" col-md-2 btn btn-success float-right">Envoyer</button>
+					<button type="submit" class=" col-md-2 btn btn-secondary">Envoyer</button>
 				</div>
 			</form>
 

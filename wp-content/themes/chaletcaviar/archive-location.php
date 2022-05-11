@@ -2,16 +2,11 @@
 
 <?php get_header() ?>
 
-<?php
-global $post;
-$x = new PostEntity($post);
-?>
-<pre>
-<?php var_dump($x); ?>
-</pre>
+<div class="entete">
+<h1 class="text-dark text-center">Chalets en location</h1>
+</div>
+<hr class="mb-2" />
 
-
-<h1>Nos locations de chalet</h1>
 <?php $paged = (get_query_var('paged')) ? get_query_var('paged') : 1;
 $args = array(
     'post_type' => 'location',
@@ -30,6 +25,7 @@ $args = array(
             </div>
         <?php endwhile ?>
     </div>
+    <?php App\chalet_caviar_pagination() ?>
 <?php else : ?>
     <h1>Pas de chalets enregistrés</h1>
 <?php endif ?>

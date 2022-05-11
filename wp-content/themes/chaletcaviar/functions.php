@@ -5,15 +5,16 @@ namespace App;
 use AgenceMenuPage;
 use WP_Query;
 
-require_once('options/agence.php');
+require_once('options/Agence.php');
 require_once('entity/PostEntity.php');
 
 function chalet_caviar_register_assets()
 {
 
-    wp_register_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootswatch@4.0.0/dist/spacelab/bootstrap.min.css');
+    wp_register_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootswatch@4.0.0/dist/materia/bootstrap.min.css',['style_chaletcaviar']);
     wp_register_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js', ['popper'], false, true);
     wp_register_script('popper', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js', [], false, true);
+    wp_enqueue_style('style_chaletcaviar', get_template_directory_uri() . '/assets/style.css');
     wp_enqueue_style('bootstrap');
     wp_enqueue_script('bootstrap');
 }
@@ -31,6 +32,7 @@ function chalet_caviar_supports()
     register_nav_menu('footer', 'Pied de page');
 
     add_image_size('card-header', 350, 215, true);
+    add_image_size('backoffice', 64, 64 ,false);
     /** nouveau format d'image */
 }
 
@@ -103,12 +105,34 @@ function chalet_caviar_init()
             'rewrite' => array('slug' => 'ventes', 'with_front' => false),
         );
         register_post_type('vente', $args);
+
+        register_taxonomy('genre', array('vente','location'), [
+            'labels' => [
+                'name' => 'Genre',
+                'singular_name'     => 'Genre',
+                'plural_name'       => 'Genres',
+                'search_items'      => 'Rechercher des genres',
+                'all_items'         => 'Toutes les genres',
+                'edit_item'         => 'Editer le genre',
+                'update_item'       => 'Mettre à jour le genre',
+                'add_new_item'      => 'Ajouter un nouveau genre',
+                'new_item_name'     => 'Ajouter un nouveau genre',
+                'menu_name'         => 'Genre',
+            ],
+            'show_in_rest' => true,
+            'hierarchical' => true,
+            'show_admin_column' => true,
+            'show_tagcloud' => true,
+           
+    
+        ]);
+
 }
 
 function chalet_caviar_pagination()
 {
     $pages = paginate_links(['type' => 'array']);    
-    var_dump(get_page_link());
+//    var_dump(get_page_link());
     if ($pages === null) {
         return;
     }
@@ -162,8 +186,9 @@ add_filter('nav_menu_link_attributes', 'App\chalet_caviar_menu_link_class');
 add_filter('manage_posts_columns', function($columns){
     return [
         'cb' => $columns['cb'],
+        'thumbnail' => 'backoffice',
         'title' => $columns['title'],
-        'thumbnail' => 'Miniature',
+        
         'date' => $columns['date']
     ];
 });
