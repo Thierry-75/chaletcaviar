@@ -5,7 +5,7 @@
 <?php get_header() ?>
 
 <div class="entete">
-<h1 class="text-dark text-center">Chalets en vente</h1>
+<h3 class="text-info text-center">Chalets en vente</h3>
 </div>
 <hr class="mb-2" />
 

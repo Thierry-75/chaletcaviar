@@ -4,7 +4,7 @@
 
     <div class="card-body">
         <h5 class="card-title"><?php the_title() ?></h5>
-        <h6 class="card-subtitle mb-2 text-muted">Edité le: <?php the_date() ?></h6>
+        <h6 class="card-subtitle mb-2 text-muted">Annonce du: <?php the_date() ?></h6>
         <p class="card-text"><?php the_excerpt() ?></p>
         <?php $postTags = get_the_tags(); ?>
         <?php if ($postTags) { ?>

@@ -11,7 +11,7 @@ require_once('entity/PostEntity.php');
 function chalet_caviar_register_assets()
 {
 
-    wp_register_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootswatch@4.0.0/dist/materia/bootstrap.min.css',['style_chaletcaviar']);
+    wp_register_style('bootstrap', 'https://cdn.jsdelivr.net/npm/bootswatch@4.0.0/dist/cerulean/bootstrap.min.css',['style_chaletcaviar']);
     wp_register_script('bootstrap', 'https://cdn.jsdelivr.net/npm/bootstrap@5.1.3/dist/js/bootstrap.min.js', ['popper'], false, true);
     wp_register_script('popper', 'https://cdn.jsdelivr.net/npm/@popperjs/core@2.10.2/dist/umd/popper.min.js', [], false, true);
     wp_enqueue_style('style_chaletcaviar', get_template_directory_uri() . '/assets/style.css');
@@ -32,6 +32,7 @@ function chalet_caviar_supports()
     register_nav_menu('footer', 'Pied de page');
 
     add_image_size('card-header', 350, 215, true);
+    add_image_size('view-product', 400, 265, true);
     add_image_size('backoffice', 64, 64 ,false);
     /** nouveau format d'image */
 }

@@ -98,7 +98,7 @@ if (isset($_POST['submitted'])) {
 			<form action="<?php the_permalink(); ?>" id="contactForm" method="post">
 				<fieldset>
 					<div class="entete col-md-12">
-					<legend class="text-dark text-center"><h1>&nbsp;Laissez nous votre message</h1></legend>
+					<legend ><h3 class="text-info text-center">&nbsp;Laissez nous votre message</h3></legend>
 					</div>
 					
 					<br />
@@ -151,12 +151,12 @@ if (isset($_POST['submitted'])) {
 				</fieldset>
 				<div class="input-group">
 					<div class="col-md-5"></div>
-					<button type="submit" class=" col-md-2 btn btn-secondary">Envoyer</button>
+					<button type="submit" class=" col-md-2 btn btn-success">Envoyer</button>
 				</div>
 			</form>
 
 		<?php endwhile; ?>
 	<?php endif; ?>
 <?php } ?>
-
+<?php  echo home_url( $wp->request ); ?>
 <?php get_footer(); ?>

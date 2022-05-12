@@ -3,7 +3,7 @@
 <?php get_header() ?>
 
 <div class="entete">
-<h1 class="text-dark text-center">Actualités</h1>
+<h3 class="text-info text-center">Actualités</h3>
 </div>
 <hr class="mb-2" />
 
