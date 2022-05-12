@@ -24,7 +24,7 @@
     <div class=jumbotron>
       <div class=container>
         <div class=fond>
-          <h1 class="text-success">Notre agence à votre écoute</h1>
+          <h1 class="text-white text-center">Notre agence à votre écoute</h1>
         </div>
       </div>
     </div>
