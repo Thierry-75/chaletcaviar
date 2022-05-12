@@ -158,5 +158,5 @@ if (isset($_POST['submitted'])) {
 		<?php endwhile; ?>
 	<?php endif; ?>
 <?php } ?>
-<?php  echo home_url( $wp->request ); ?>
+
 <?php get_footer(); ?>

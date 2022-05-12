@@ -33,3 +33,21 @@ alert alert-dismissible alert-light{
   .card-img-top {
     box-shadow: 0 0 65px #cdbe9f inset, 0 0 20px #beae8c inset, 0 0 5px #816f47!important;
   }
+
+  .fond {
+    background: url('image_de_fond.jpg') no-repeat ;
+    position: relative; /* Le fond est fixé en haut de la page */
+    width: 112%; /* Il occupe toute la largeur de l'écran */
+    height: 400px; /* On met ici la même hauteur que le jumbotron */
+    top: -62px;
+    left: -60px;
+    z-index: 1;
+    background-size: 1096px 400px;
+   }
+   .jumbotron {
+    margin-bottom: 100px;
+    height: 400px;
+    color: white; /* Le texte sera affiché en blanc */
+    text-shadow: black 0.3em 0.3em 0.3em;
+    background:transparent;
+   }
